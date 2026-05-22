@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Steam Library News Killer",
+  "version": "1.0.0",
+  "description": "Removes news/event banners from the Steam library.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://steamloopback.host/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://steamloopback.host/*"
+      ],
+      "match_about_blank": true,
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
